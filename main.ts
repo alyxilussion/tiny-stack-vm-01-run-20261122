@@ -22,9 +22,9 @@ function run(p,n){
   case 2:P(h(4));break;
   case 3:g();break;
   case 4:if(!s.length)throw 2;P(s[s.length-1]);break;
-  case 5:if(s.length<2)throw 2;s.push(s.splice(s.length-2,1)[0]);break;
+  case 5:if(s.length<2)throw 2;{const t=s[s.length-1];s[s.length-1]=s[s.length-2];s[s.length-2]=t}break;
   case 6:if(s.length<2)throw 2;P(s[s.length-2]);break;
-  case 7:if(s.length<3)throw 2;s.push(s.splice(s.length-3,1)[0]);break;
+  case 7:if(s.length<3)throw 2;{const t=s[s.length-3];s[s.length-3]=s[s.length-2];s[s.length-2]=s[s.length-1];s[s.length-1]=t}break;
   case 16:b2((a,b)=>a+b);break;
   case 17:b2((a,b)=>a-b);break;
   case 18:b2((a,b)=>Math.imul(a,b));break;
